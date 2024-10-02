@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather and Task App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Погода и Задачи</h1>
+
+        <div class="form-group">
+            <label for="city">Город:</label>
+            <input type="text" id="city" class="form-control" placeholder="Введите название города">
+        </div>
+
+        <div class="mb-3">
+            <h2 id="temperature" class="text-center"></h2>
+            <h3 id="current-weather" class="text-center"></h3>
+        </div>
+
+        <div class="form-group">
+            <label for="task-input">Новая задача:</label>
+            <input type="text" id="task-input" class="form-control" placeholder="Введите задачу" onkeypress="addTask(event)">
+        </div>
+
+        <ul id="task-list" class="list-group mb-3"></ul>
+        <button id="delete-completed" class="btn btn-danger">Удалить выполненные задачи</button>
+
+        <div class="mt-4">
+            <h4 id="time"></h4>
+            <h4 id="date"></h4>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
