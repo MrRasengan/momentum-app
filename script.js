@@ -15,13 +15,13 @@ function updateBackground() {
     const background = document.body;
 
     if (hour >= 0 && hour < 6) {
-        background.style.backgroundImage = `url(${images[0]})`; // Исправлено
+        background.style.backgroundImage = `url(${images[0]})`;
     } else if (hour >= 6 && hour < 12) {
-        background.style.backgroundImage = `url(${images[1]})`; // Исправлено
+        background.style.backgroundImage = `url(${images[1]})`;
     } else if (hour >= 12 && hour < 18) {
-        background.style.backgroundImage = `url(${images[2]})`; // Исправлено
+        background.style.backgroundImage = `url(${images[2]})`;
     } else {
-        background.style.backgroundImage = `url(${images[3]})`; // Исправлено
+        background.style.backgroundImage = `url(${images[3]})`;
     }
 }
 
@@ -48,9 +48,8 @@ function fetchWeather(city) {
             return response.json();
         })
         .then((data) => {
-            // Проверяем, существуют ли элементы перед их использованием
             if (temperatureDisplay && weatherDisplay) {
-                temperatureDisplay.innerText = `${data.main.temp} °C`; // Исправлено использование шаблонной строки
+                temperatureDisplay.innerText = `${data.main.temp} °C`;
                 const weatherDescription = data.weather[0].description;
                 weatherDisplay.innerText = weatherDescription.charAt(0).toUpperCase() + weatherDescription.slice(1);
             } else {
@@ -65,7 +64,7 @@ function fetchWeather(city) {
             if (temperatureDisplay) {
                 temperatureDisplay.innerText = "";
             }
-        }); // Закрывающая скобка для fetchWeather
+        });
 }
 
 function loadCity() {
@@ -87,7 +86,7 @@ function saveCity() {
 function addTask(event) {
     if (event.key === "Enter" && taskInput.value.trim() !== "") {
         const li = document.createElement("li");
-        li.innerHTML = `<input type="checkbox"/> ${taskInput.value} <button class="delete">Удалить</button>`; // Исправлено
+        li.innerHTML = `<input type="checkbox"/> ${taskInput.value} <button class="delete">Удалить</button>`;
         taskList.appendChild(li);
         taskInput.value = "";
 
